@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "814993815366",
+    "project_id": "eval2-sis22-775a1",
+    "storage_bucket": "eval2-sis22-775a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814993815366:android:51b7b1e77797061b9b5747",
+        "android_client_info": {
+          "package_name": "com.EDxROX.eval2_sis22"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtdKvAYXtoP0Rjdy0lFtpEz7kLVjAKsTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
