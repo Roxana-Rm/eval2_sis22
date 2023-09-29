@@ -21,15 +21,23 @@ class MyDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.home),
-            title: Text('Inicio'),
+            title: Text('adicion'),
             onTap: () {
               // Lógica para manejar la selección de "Inicio"
               Navigator.pop(context); // Cierra el Drawer
             },
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Configuración'),
+            leading: Icon(Icons.home),
+            title: Text('consultas'),
+            onTap: () {
+              // Lógica para manejar la selección de "Inicio"
+              Navigator.pop(context); // Cierra el Drawer
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person_2),
+            title: Text('acerca de de: '),
             onTap: () {
               // Lógica para manejar la selección de "Configuración"
               Navigator.pop(context); // Cierra el Drawer

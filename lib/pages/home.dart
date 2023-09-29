@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'menu.dart';
@@ -12,6 +13,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  void getChat() async {
+    CollectionReference collectionReference =
+    FirebaseFirestore.instance.collection("tb_productos");
+    QuerySnapshot mensaje = await collectionReference.get();
+    if (mensaje.docs.length !=0) {
+      for (var doc in mensaje.docs) {
+        print(doc.data());
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,5 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: MyDrawer(), // Agrega el menú Drawer a esta página
     );
+  }
+  @override
+  void initState() {
+    //metodo que se ejecuta automaticamente 
+    super.initState();
+    getChat();
+  }
+
+  @override
+  void dispose() {
+    //metodo que se ejecuta cuando se cierra
+    super.dispose();
   }
 }
