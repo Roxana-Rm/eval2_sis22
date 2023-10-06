@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'form_container_widget.dart';
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -20,17 +22,17 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
         return Scaffold(
-      appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(Icons.menu),
-             onPressed: () => print('has presionado el icono menu'),
-             );
-          },
-        ),
-        title: const Text('Login'),
-      ),
+      // appBar: AppBar(
+      //   leading: Builder(
+      //     builder: (BuildContext context) {
+      //       return IconButton(
+      //         icon: const Icon(Icons.menu),
+      //        onPressed: () => print('has presionado el icono menu'),
+      //        );
+      //     },
+      //   ),
+      //   // title: const Text('Login'),
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -42,10 +44,10 @@ class _LoginState extends State<Login> {
               ),
 
           const SizedBox(height: 30,),
-          formContainerWidget (
+          FormContainerWidget (
             controller : _emailController,
             hintText: 'Email',
-            isPassWordFaild: false
+            isPassWordFaild: false,
           ),
             SizedBox(
               height: 16.0,

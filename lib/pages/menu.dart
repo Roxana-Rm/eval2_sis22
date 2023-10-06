@@ -1,6 +1,7 @@
 import 'package:eval2_sis22/pages/agregar.dart';
 import 'package:eval2_sis22/pages/consultas.dart';
 import 'package:eval2_sis22/pages/info.dart';
+import 'package:eval2_sis22/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -21,7 +22,7 @@ class _MyDrawerState extends State<MyDrawer> {
       case 2:
         return MyAp();
       case 3:
-        return ();
+        return  const Login();
       case 4:
         return ();
     }
@@ -83,14 +84,14 @@ class _MyDrawerState extends State<MyDrawer> {
                 _SetItemDrawer(2);
               },
             ),
-            // ListTile(
-            //   selected: (2 == _item),
-            //   leading: Icon(Icons.arrow_forward_ios),
-            //   title: Text('Page 2'),
-            //   onTap: () {
-            //     _SetItemDrawer(3);
-            //   },
-            // ),
+            ListTile(
+              selected: (2 == _item),
+              leading: Icon(Icons.arrow_forward_ios),
+              title: Text('Page 2'),
+              onTap: () {
+                _SetItemDrawer(3);
+              },
+            ),
           ],
         ),
       ),
@@ -106,6 +107,8 @@ class _MyDrawerState extends State<MyDrawer> {
         return MyScreen();
       case 2:
         return MyAp();
+      case 3:
+        return Login();
       // Agrega más casos según las páginas que quieras mostrar.
       default:
         return Center(
