@@ -40,24 +40,7 @@ class _LoginState extends State<Login> {
               'Login',
               style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
               ),
-          //  TextFormField(
-          //    decoration: const InputDecoration(
-          //      labelText: 'Correo electrónico',
-          //    ),
-          //  ),
-          //   TextFormField(
-          //     decoration: InputDecoration(
-          //       labelText: 'Contraseña',
-          //       suffixIcon: IconButton(
-          //         onPressed: () {
-          //           setState(() {
-          //           });
-          //         },
-          //         icon: Icon( Icons.visibility_off : Icons.visibility,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
+
           const SizedBox(height: 30,),
           formContainerWidget (
             controller : _emailController,

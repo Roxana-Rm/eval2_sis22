@@ -9,8 +9,8 @@ class FormContainerWidget extends StatefulWidget {
   const FormContainerWidget({super.key,
 
     this.controller,
-  this.isPassWordFaild,
-  this.hintText,
+    this.isPassWordFaild,
+    this.hintText,
 
   });
 
