@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'form_container_widget.dart';
@@ -42,12 +43,16 @@ class _LoginState extends State<Login> {
               'Login',
               style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
               ),
-
           const SizedBox(height: 30,),
           FormContainerWidget (
             controller : _emailController,
             hintText: 'Email',
             isPassWordFaild: false,
+          ),          const SizedBox(height: 30,),
+          FormContainerWidget (
+            controller : _passwordController,
+            hintText: 'contraseña',
+            isPassWordFaild: true,
           ),
             SizedBox(
               height: 16.0,
@@ -64,4 +69,18 @@ class _LoginState extends State<Login> {
       ),
     );
   }
+  // void _isSingin() async {
+
+  //   String Email = _emailController.text;
+  //   String password = _passwordController.text;
+
+  //   if (User != null) {
+  //     print("login complteos");
+      
+  //     Navigator.pushReplacementNamed(context, "/");
+  //   } else {
+  //     print("some error happend");
+  //   }
+
+  // }
 }
