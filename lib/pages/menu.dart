@@ -22,7 +22,7 @@ class _MyDrawerState extends State<MyDrawer> {
       case 2:
         return MyAp();
       case 3:
-        return  const Login();
+        return LoginPage();
       case 4:
         return ();
     }
@@ -108,7 +108,7 @@ class _MyDrawerState extends State<MyDrawer> {
       case 2:
         return MyAp();
       case 3:
-        return Login();
+        return LoginPage();
       // Agrega más casos según las páginas que quieras mostrar.
       default:
         return Center(
