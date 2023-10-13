@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 
 import 'menu.dart';
 
@@ -10,9 +12,11 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
+  
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
 
   void getChat() async {
     CollectionReference collectionReference =
@@ -25,10 +29,59 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+void _alertSuccess (){
+  QuickAlert.show(
+    context: context,
+    type: QuickAlertType. confirm 
+    );
+}
+void _aleertClose (){
+  QuickAlert.show(
+ context: context,
+ type: QuickAlertType.confirm,
+ text: 'desea salir de esta  cosa',
+ confirmBtnText: 'aceptar',
+ cancelBtnText: 'cancelar',
+ barrierDismissible: true,
+ cancelBtnTextStyle: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+ confirmBtnColor: Colors.green,
+ onConfirmBtnTap: () {
+  FirebaseAuth.instance.signOut();
+  Navigator.pushNamed(context, "/Login");
+ },
+ onCancelBtnTap: (){
+  Navigator.of(context).pop();
+ },
+);
+}
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext){
+            return IconButton(
+              icon: const Icon(Icons.person_2),
+              onPressed: () {
+                _alertSuccess();
+              },
+            );
+          },
+        ),
+        actions: [
+          IconButton(
+            onPressed: (){
+              FirebaseAuth.instance.signOut();
+              Navigator.pushNamed(context, "/add");
+              
+            },
+            icon: const Icon(Icons.close),
+            )
+        ],
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
@@ -38,13 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("testing connection"),
           ],
         ),
-      ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   tooltip: 'Increment',
-      //   child: const Icon(Icons.add),
-      // ),
-      drawer: MyDrawer(), // Agrega el menú Drawer a esta página
+      ), // Agrega el menú Drawer a esta página
+                  drawer: MyDrawer(),
     );
   }
   @override

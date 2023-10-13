@@ -1,6 +1,8 @@
+import 'package:eval2_sis22/pages/agregar.dart';
+import 'package:eval2_sis22/pages/consultas.dart';
+import 'package:eval2_sis22/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 import 'pages/home.dart';
 
 void main () {
@@ -27,7 +29,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 29, 12, 255)),
         useMaterial3: true,
       ),
+      
       home: const MyHomePage(title: 'evalucaion 2'),
+      initialRoute: "/login",
+      routes: {
+            "/add": (context) => const AddStudents(),
+            "/signup": (context) => MyScreen(),
+            "/login": (context) => Login(),
+      },
+      
     );
   }
 }

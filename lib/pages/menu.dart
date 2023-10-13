@@ -4,6 +4,7 @@ import 'package:eval2_sis22/pages/info.dart';
 import 'package:eval2_sis22/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
+
 class MyDrawer extends StatefulWidget {
   @override
   State<MyDrawer> createState() => _MyDrawerState();
@@ -22,9 +23,9 @@ class _MyDrawerState extends State<MyDrawer> {
       case 2:
         return MyAp();
       case 3:
-        return LoginPage();
-      case 4:
-        return ();
+        return Login();
+      // case 4:
+      //   return ();
     }
   }
 
@@ -108,7 +109,7 @@ class _MyDrawerState extends State<MyDrawer> {
       case 2:
         return MyAp();
       case 3:
-        return LoginPage();
+        return Login();
       // Agrega más casos según las páginas que quieras mostrar.
       default:
         return Center(
